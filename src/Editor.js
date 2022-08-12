@@ -1,27 +1,25 @@
-import ExampleTheme from "./themes/ExampleTheme";
-import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
-import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
-import ToolbarPlugin from "./plugins/ToolbarPlugin";
-import { HeadingNode, QuoteNode } from "@lexical/rich-text";
-import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
-import { ListItemNode, ListNode } from "@lexical/list";
 import { CodeHighlightNode, CodeNode } from "@lexical/code";
 import { AutoLinkNode, LinkNode } from "@lexical/link";
+import { ListItemNode, ListNode } from "@lexical/list";
+import { TRANSFORMERS } from "@lexical/markdown";
+import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
+import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
 import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
-import { TRANSFORMERS } from "@lexical/markdown";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { HeadingNode, QuoteNode } from "@lexical/rich-text";
+import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
+import ToolbarPlugin from "./plugins/ToolbarPlugin";
+import ExampleTheme from "./themes/ExampleTheme";
 
-import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin";
 import AutoLinkPlugin from "./plugins/AutoLinkPlugin";
+import ListMaxIndentLevelPlugin from "./plugins/ListMaxIndentLevelPlugin";
 
 function Placeholder() {
-  return (
-    <div className="editor-placeholder">Let's create some show notes!</div>
-  );
+  return <div className="editor-placeholder">Add text...</div>;
 }
 
 const editorConfig = {
@@ -43,8 +41,8 @@ const editorConfig = {
     TableCellNode,
     TableRowNode,
     AutoLinkNode,
-    LinkNode
-  ]
+    LinkNode,
+  ],
 };
 
 export default function Editor() {
